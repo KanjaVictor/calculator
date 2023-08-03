@@ -14,6 +14,7 @@ class App extends Component {
         }
     }
 
+    //Reset Method
     reset = () => {
         this.setState({ current: '0', previous: [], nextIsReset: false });
     }
@@ -43,6 +44,7 @@ class App extends Component {
     }
 
     render() {
+
         const buttons = [
             { symbol: 'C', cols: 3, action: this.reset },
             { symbol: '/', cols: 1, action: this.addToCurrent },
@@ -72,6 +74,7 @@ class App extends Component {
 
                 <input className="result" type="text" value={this.state.current}/>
                 
+                {/* Mapping the buttons */}
                 {buttons.map((btn, i) => {
                     return <Button symbol={btn.symbol} cols={btn.cols} action={(symbol) => btn.action(symbol)}/>
                 })}
